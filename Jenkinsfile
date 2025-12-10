@@ -14,7 +14,7 @@ pipeline {
         stage('Checkout') {
             steps {
               
-                git branch: 'master',
+                git branch: 'main',
                     url: 'https://github.com/sirine000/StudentManagement.git'
             }
         }
