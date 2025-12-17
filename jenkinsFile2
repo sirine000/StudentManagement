@@ -1,0 +1,37 @@
+pipeline {
+    agent any
+
+    tools {
+        jdk 'JAVA_HOME'
+        maven 'M2_HOME'
+    }
+
+    triggers {
+        // Remplace cron par le trigger GitHub
+        githubPush()
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'main',
+                    url: 'https://github.com/sirine000/StudentManagement.git'
+            }
+        }
+
+        stage('Clean & Build') {
+            steps {
+                sh 'mvn clean'
+            }
+        }
+    }
+
+    post {
+        success {
+            echo 'Build terminé avec succès !'
+        }
+        failure {
+            echo 'Le build a échoué.'
+        }
+    }
+}
