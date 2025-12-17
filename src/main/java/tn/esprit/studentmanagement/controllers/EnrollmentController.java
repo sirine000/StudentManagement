@@ -13,7 +13,7 @@ import java.util.List;
 @AllArgsConstructor
 public class EnrollmentController {
     IEnrollment enrollmentService;
-    @GetMapping("/getAllEnrollment")
+    @GetMapping("/getAllEnrollmentt")
     public List<Enrollment> getAllEnrollment() { return enrollmentService.getAllEnrollments(); }
 
     @GetMapping("/getEnrollment/{id}")
