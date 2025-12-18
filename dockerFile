@@ -1,0 +1,29 @@
+# Utiliser une image OpenJDK officielle stable
+FROM eclipse-temurin:17-jdk
+
+# Définir le répertoire de travail dans le conteneur
+WORKDIR /app
+
+# Copier le fichier jar construit par Maven
+COPY target/myapp.jar app.jar
+
+# Exposer le port sur lequel Spring Boot écoute
+EXPOSE 8080
+
+# Commande pour démarrer l'application
+ENTRYPOINT ["java", "-jar", "app.jar"]
+Mayss
+# Utiliser une image OpenJDK officielle stable
+FROM eclipse-temurin:17-jdk
+
+# Définir le répertoire de travail dans le conteneur
+WORKDIR /app
+
+# Copier le fichier jar construit par Maven
+COPY target/myapp.jar app.jar
+
+# Exposer le port sur lequel Spring Boot écoute
+EXPOSE 8080
+
+# Commande pour démarrer l'application
+ENTRYPOINT ["java", "-jar", "app.jar"]
